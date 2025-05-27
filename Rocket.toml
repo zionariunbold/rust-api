@@ -1,0 +1,2 @@
+[default.databases.postgres]
+url = "postgres://postgres:pass%40123@127.0.0.1:5432/online_lesson"
