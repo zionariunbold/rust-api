@@ -28,3 +28,14 @@ cargo build
 # Migration хийх (Хэрвээ Diesel ашиглаж байгаа бол)
 diesel setup
 diesel migration run
+
+# Төслийн root хавтас дотор .env файл үүсгээд дараах утгуудыг тохируулна:
+DATABASE_URL=postgres://postgres:yourpassword@127.0.0.1:5432/your_db
+SECRET_KEY=your_jwt_secret_key
+
+# Rocket framework-ийн тохиргоог Rocket.toml файлд дараах байдлаар хийнэ:
+[default.databases.postgres]
+url = "postgres://postgres:yourpassword@127.0.0.1:5432/your_db"
+
+🚀 Серверийг ажиллуулах
+cargo run
