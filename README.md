@@ -7,6 +7,6 @@
 ## ⚙️ Суулгалт
 
 ```bash
-git clone https://github.com/yourusername/yourproject.git
+git clone https://github.com/zionariunbold/rust-api.git
 cd yourproject
 cargo build
