@@ -19,8 +19,8 @@
 
 ```bash
 # Төслийг хуулж авах
-git clone https://github.com/yourusername/yourproject.git
-cd yourproject
+git clone https://github.com/zionariunbold/rust-api.git
+cd rust-api
 
 # Сангуудыг татаж авах
 cargo build
