@@ -10,12 +10,12 @@
 git clone https://github.com/zionariunbold/rust-api.git
 cd yourproject
 cargo build
+bash
 
 
-📁 .env тохиргоо
+## 📁 .env тохиргоо
 Төслийн root-д .env файл үүсгээд дараах утгуудыг оруулна:
 
-env
 DATABASE_URL=postgres://postgres:yourpassword@127.0.0.1:5432/your_db
 SECRET_KEY=your_jwt_secret_key
 
@@ -29,8 +29,6 @@ Rocket.toml файлд өгөгдлийн сангийн тохиргоог да
 url = "postgres://postgres:yourpassword@127.0.0.1:5432/your_db"
 
 🚀 API-г ажиллуулах
-bash
-Copy
 cargo run
 Сервер http://localhost:8000 дээр ажиллана.
 
