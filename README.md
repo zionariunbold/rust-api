@@ -28,9 +28,3 @@ cargo build
 # Migration хийх (Хэрвээ Diesel ашиглаж байгаа бол)
 diesel setup
 diesel migration run
-
-## 🛠 Rocket.toml тохиргоо
-Rocket framework-ийн тохиргоог Rocket.toml файлд дараах байдлаар хийнэ:
-```bash
-[default.databases.postgres]
-url = "postgres://postgres:yourpassword@127.0.0.1:5432/your_db"
