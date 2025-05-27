@@ -17,7 +17,6 @@
 
 ## ⚙️ Төслийг суулгах алхмууд
 
-```bash
 # Төслийг хуулж авах
 git clone https://github.com/yourusername/yourproject.git
 cd yourproject
@@ -31,7 +30,6 @@ diesel migration run
 
 ## ⚙️ Төслийг суулгах алхмууд
 
-```bash
 # Төслийг хуулж авах
 git clone https://github.com/yourusername/yourproject.git
 cd yourproject
