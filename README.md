@@ -28,3 +28,17 @@ cargo build
 # Migration хийх (Хэрвээ Diesel ашиглаж байгаа бол)
 diesel setup
 diesel migration run
+
+## ⚙️ Төслийг суулгах алхмууд
+
+```bash
+# Төслийг хуулж авах
+git clone https://github.com/yourusername/yourproject.git
+cd yourproject
+
+# Зависимуудыг татаж авах
+cargo build
+
+# Migration хийх (Хэрвээ Diesel ашиглаж байгаа бол)
+diesel setup
+diesel migration run
