@@ -8,7 +8,6 @@ use std::env;
 pub struct Claims {
     pub sub: String,
     pub exp: usize,
-    //pub role: String,
 }
 
 pub struct Jwt;
@@ -26,7 +25,6 @@ impl Jwt {
         let claims = Claims {
             sub: email.to_owned(),
             exp: expiration,
-            //role: role.to_owned(),
         };
 
         encode(

@@ -1,4 +1,4 @@
-use crate::models::user::{NewUser, User};
+use crate::models::user::{NewUser, PublicUser, User};
 use crate::schema::*;
 use bcrypt::{DEFAULT_COST, hash};
 use diesel::prelude::*;
@@ -11,14 +11,20 @@ impl UserRepository {
         users::table.find(id).get_result(c).await
     }
 
-    pub async fn find_multiple(c: &mut AsyncPgConnection, limit: i64) -> QueryResult<Vec<User>> {
-        users::table.limit(limit).get_results(c).await
+    pub async fn find_multiple(
+        c: &mut AsyncPgConnection,
+        limit: i64,
+    ) -> QueryResult<Vec<PublicUser>> {
+        users::table
+            .select((users::id, users::name, users::email)) // Explicitly select only public fields
+            .limit(limit)
+            .load::<PublicUser>(c)
+            .await
     }
-
     pub async fn find_by_email(c: &mut AsyncPgConnection, user_email: &str) -> QueryResult<User> {
         users::table
-            .filter(users::email.eq(user_email)) // Correct way to filter by a column
-            .first::<User>(c) // Fetches the first matching result
+            .filter(users::email.eq(user_email))
+            .first::<User>(c)
             .await
     }
 
@@ -26,7 +32,6 @@ impl UserRepository {
         c: &mut AsyncPgConnection,
         mut new_user: NewUser,
     ) -> QueryResult<User> {
-        // Hash the password
         if let Ok(hashed) = hash(&new_user.password, DEFAULT_COST) {
             new_user.password = hashed;
         } else {
