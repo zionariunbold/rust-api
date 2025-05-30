@@ -33,7 +33,10 @@ pub async fn login(
             let token = crate::utils::jwt::Jwt::create_jwt(&login.email);
             Ok(json!({ "token": token }))
         }
-        _ => Err(Custom(Status::Unauthorized, json!("Invalid credentials"))),
+        _ => Err(Custom(
+            Status::Unauthorized,
+            json!({"status": "error","message":"Invalid credentials"}),
+        )),
     }
 }
 

@@ -19,7 +19,7 @@ pub async fn get_index() -> &'static str {
 async fn main() {
     let _ = rocket::build()
         .mount(
-            "/",
+            "/api",
             rocket::routes![
                 rocket_routes::user::get_users,
                 rocket_routes::user::create_user,
